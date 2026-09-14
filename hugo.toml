@@ -1,0 +1,7 @@
+baseurl = "https://k870611.github.io/boke/"
+languageCode = "zh-cn"
+title = "Tech Blog"
+enableRobotsXML = true
+
+[params]
+  author = "k870611"
