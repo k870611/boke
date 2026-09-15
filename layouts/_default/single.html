@@ -1,0 +1,13 @@
+{{ template "base" . }}
+{{ define "title" }}{{ .Title }} - {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
+    {{ with .Params.author }} · 作者：{{ . }}{{ end }}
+    {{ with .Params.tags }} · {{ range . }}<a class="tag" href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}{{ end }}
+  </p>
+  {{ .Content }}
+</article>
+{{ end }}

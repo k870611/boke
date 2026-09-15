@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  <style>
+    body { font-family: -apple-system, "Segoe UI", "Noto Sans TC", sans-serif; max-width: 46rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.7; color: #222; }
+    a { color: #0645ad; }
+    code, pre { background: #f4f4f4; border-radius: 4px; }
+    pre { padding: .8rem 1rem; overflow-x: auto; }
+    code { padding: .1rem .35rem; }
+    pre code { padding: 0; }
+    h1, h2, h3 { line-height: 1.3; }
+    .meta { color: #777; font-size: .9rem; }
+    .site-header { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #eee; margin-bottom: 1.5rem; padding-bottom: .5rem; }
+    .site-header a { text-decoration: none; color: inherit; margin-right: 1rem; }
+    .tag { display: inline-block; background: #eef; color: #0645ad; border-radius: 10px; padding: .1rem .6rem; font-size: .8rem; margin-right: .3rem; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <strong><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></strong>
+    <nav>
+      <a href="{{ .Site.BaseURL }}">首页</a>
+      <a href="{{ .Site.BaseURL }}posts/">文章</a>
+      <a href="{{ .Site.BaseURL }}tags/">标签</a>
+    </nav>
+  </header>
+  <main>
+    {{ block "main" . }}{{ end }}
+  </main>
+  <footer>
+    <p class="meta">{{ with .Site.Params.author }}{{ . }}{{ end }} · {{ .Site.Title }}</p>
+  </footer>
+</body>
+</html>
